@@ -346,7 +346,7 @@ export default function RouteMap({ routeCalculated, origin, destination, routes,
       {/* Incident Statistics */}
       {showIncidents && incidents.length > 0 && (
         <div className="absolute top-4 right-4 z-[1000] bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg border border-border/50 max-w-xs">
-          <div className="text-sm font-semibold mb-2">Recent Incidents (48hr)</div>
+          <div className="text-sm font-semibold mb-2">Recent Incidents</div>
           <div className="grid grid-cols-2 gap-2 text-xs">
             <div className="flex items-center gap-1">
               <span>⛺</span>

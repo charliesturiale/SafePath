@@ -7,6 +7,40 @@ export interface SavedLocation {
 
 const STORAGE_KEY = "safepath_saved_locations"
 
+// Popular San Francisco landmarks for quick access
+export const SF_LANDMARKS: SavedLocation[] = [
+  {
+    id: 'landmark-1',
+    name: 'Union Square',
+    address: 'Union Square, San Francisco, CA 94108',
+    timestamp: 0
+  },
+  {
+    id: 'landmark-2',
+    name: 'Fisherman\'s Wharf',
+    address: 'Fisherman\'s Wharf, San Francisco, CA 94133',
+    timestamp: 0
+  },
+  {
+    id: 'landmark-3',
+    name: 'Golden Gate Park',
+    address: 'Golden Gate Park, San Francisco, CA 94122',
+    timestamp: 0
+  },
+  {
+    id: 'landmark-4',
+    name: 'Ferry Building',
+    address: 'Ferry Building Marketplace, San Francisco, CA 94111',
+    timestamp: 0
+  },
+  {
+    id: 'landmark-5',
+    name: 'Coit Tower',
+    address: 'Coit Tower, 1 Telegraph Hill Blvd, San Francisco, CA 94133',
+    timestamp: 0
+  }
+]
+
 /**
  * Get all saved locations from localStorage
  */
@@ -42,8 +76,8 @@ export function saveLocation(address: string, name?: string): SavedLocation {
 
   locations.unshift(newLocation) // Add to beginning
 
-  // Keep only last 20 locations
-  const limitedLocations = locations.slice(0, 20)
+  // Keep only last 2 locations for cleaner UI
+  const limitedLocations = locations.slice(0, 2)
 
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(limitedLocations))
